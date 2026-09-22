@@ -1,59 +1,104 @@
 # LEDSCREEN — landing page
 
-Landing page de venda e instalação de painéis de LED em residências, casas de
-temporada e espaços comerciais na região de Orlando / Flórida Central.
+Landing page para venda e instalação de **telas de LED e video walls**, internos
+e externos, na região de Orlando / Flórida Central. Público: casas, casas de
+temporada (vacation rentals) e comércio.
 
 Site de **arquivo único**: `index.html` com HTML + CSS + JS puro, sem build e sem
-dependência de framework. Abrir o arquivo no navegador já é o site rodando.
-
-## Estrutura
+framework. Abrir o arquivo no navegador já é o site rodando.
 
 ```
 index.html      o site inteiro (marcação, estilo, scripts, conteúdo EN/PT)
+img/            fotos reais (ver img/README.md) — enquanto não existem, entram ilustrações
 vercel.json     headers e configuração de deploy
 robots.txt      indexação
 CLAUDE.md       convenções para quem for mexer no código
 ```
 
-## O que já está pronto
+## O que a página tem
 
-- Página completa: hero, serviços, por que LED, galeria, pacotes, processo,
-  bloco para donos de casa de temporada, FAQ e formulário de orçamento.
-- **Bilíngue EN/PT** com botão no topo. O inglês é o texto que está no HTML; o
-  português vem do dicionário `I18N.pt` dentro do `<script>`. O idioma escolhido
-  fica salvo no `localStorage` e a primeira visita de um navegador em português
-  já abre em PT.
-- Formulário sem backend: valida os campos e monta uma mensagem pronta no
-  WhatsApp (ou no e-mail, no botão alternativo). Nada é enviado sem o usuário
-  confirmar.
-- Responsivo, tema escuro, respeita `prefers-reduced-motion`, com meta tags de
-  SEO, Open Graph e JSON-LD `LocalBusiness`.
+- **Hero** com a proposta, dois CTAs (orçamento e WhatsApp) e selos.
+- **Onde instalamos**: casas e home theater, lanai/piscina, casas de temporada e
+  salas de jogos, comércio e letreiros.
+- **Fixação** — a seção que explica os 8 tipos de suporte: fixo, inclinável,
+  articulado, carrinho móvel, pedestal, teto/suspenso, embutido e estrutura de
+  video wall.
+- **Indoor x outdoor**: comparativo de pixel pitch, brilho (nits), distância de
+  visão e vedação, com a regra prática do pitch × 10 = distância mínima em pés.
+- **Galeria** com slots de foto (ver abaixo).
+- **Processo** em 4 passos e **o que o orçamento cobre** (8 itens).
+- **FAQ** com as 7 perguntas que aparecem em quase todo projeto.
+- **Formulário de orçamento** completo (detalhes abaixo).
+- Bilíngue **EN/PT** com botão no topo; o idioma fica salvo no `localStorage` e
+  navegador em português já abre em PT.
 
-## TODO(Victor) — antes de publicar
+## O formulário
 
-Tudo que depende de um dado real do negócio está marcado com `TODO(Victor)` no
-código. Os itens:
+Quatro blocos, pensados para o orçamento sair quase pronto da primeira mensagem:
 
-1. **Contato** — no início do `<script>`, objeto `CONTACT`:
-   `whatsapp` (só dígitos, com código do país, ex.: `14075551234`),
-   `phoneDisplay` e `email`. É o único lugar a editar: telefone, e-mail,
-   botão flutuante e links da página saem todos daí.
-2. **Marca** — a página usa o nome provisório "Orlando LED" (no header, no
-   rodapé e no JSON-LD). Trocar pelo nome definitivo.
-3. **Domínio** — substituir `https://TODO-dominio.com/` no `<link rel=canonical>`,
-   nas tags Open Graph e no JSON-LD, e gerar a imagem `og.png`.
-4. **Preços dos pacotes** — os três pacotes estão como "Sob consulta". Definir
-   o "a partir de US$ ..." de cada um (ou manter sob consulta, é uma decisão).
-5. **Fotos** — a galeria usa tiles conceituais em CSS. Trocar por fotos reais
-   das primeiras instalações (criar `/img` e substituir as `div.tile`).
-6. **Garantia** — o texto da FAQ fala em garantia sem prazo. Confirmar o prazo
-   de peças e de mão de obra antes de publicar.
-7. **Depoimentos** — não existem na página de propósito. Só entram com
-   depoimentos reais de clientes.
+1. **O ambiente** — tipo de imóvel, interno/externo coberto/externo aberto, e o
+   que vai passar na tela.
+2. **Tamanho e fixação** — faixa de tamanho, área de parede em pés, tipo de
+   fixação (fixo, inclinável, articulado, embutido, pedestal, carrinho móvel,
+   teto, estrutura), superfície da parede (drywall, madeira, bloco, stucco,
+   tijolo, vidro) e distância de quem está mais perto — que é o que define o
+   pixel pitch.
+3. **Escopo** — o que o cliente precisa (fornecer a tela, instalar, suporte,
+   tomada nova, esconder cabos, som, conserto, só orientação), prazo e faixa de
+   orçamento.
+4. **Contato** — nome, telefone, e-mail, cidade/ZIP, meio preferido e observações.
 
-Nenhuma promessa que precise de licença, seguro ou certificação foi escrita na
-página. Se a empresa for licenciada e segurada na Flórida, vale adicionar isso
-no hero — é o selo que mais converte nesse mercado.
+Validação no cliente (nome, telefone e cidade obrigatórios; e-mail validado se
+preenchido) e um campo-armadilha invisível contra robôs de spam.
+
+### Para onde o pedido vai
+
+Hoje o botão **"Enviar meu pedido"** abre o aplicativo de e-mail do visitante
+com tudo preenchido, endereçado para `victor.d.pellegrino@gmail.com`. O botão
+verde manda o mesmo resumo pelo WhatsApp.
+
+Para o pedido **cair direto na caixa de entrada**, sem depender do visitante
+apertar enviar, basta um serviço de formulário (Web3Forms, Formspree, Getform e
+similares: você cadastra o e-mail, eles devolvem um endpoint). Depois é só
+preencher no `SETTINGS` dentro do `<script>`:
+
+```js
+formEndpoint: 'https://api.web3forms.com/submit',
+formAccessKey: 'sua-chave'
+```
+
+Com o endpoint preenchido, o site envia por `fetch`, mostra a confirmação na
+própria página e cai de volta no e-mail automaticamente se a chamada falhar.
+
+## Fotos
+
+`img/README.md` lista os nomes exatos dos arquivos. Solte a foto na pasta e ela
+substitui a ilustração sozinha — nenhum código precisa mudar. Até lá a página
+mostra ilustrações em SVG feitas para o projeto (nada de banco de imagem com
+marca d'água).
+
+## TODO(Victor) — antes de divulgar
+
+Tudo que depende de um dado real está marcado com `TODO(Victor)` no código:
+
+1. **Telefone / WhatsApp** — `SETTINGS.whatsapp` (só dígitos, com código do
+   país, ex.: `14075551234`) e `SETTINGS.phoneDisplay`. É o único dado que falta
+   para a página funcionar de ponta a ponta.
+2. **Nome** — está como `Orlando LED Screens`, nome de trabalho descritivo que
+   funciona bem em busca e não afirma que existe empresa registrada. Trocar em
+   `SETTINGS.brand` (e no `<title>`, nas metatags e no JSON-LD) quando houver.
+3. **Domínio** — substituir `https://TODO-dominio.com/` no canonical, nas tags
+   Open Graph, no JSON-LD e no `robots.txt`, e gerar a imagem `og.png`.
+4. **Fotos** — ver acima.
+5. **E-mail** — hoje o pessoal. Vale trocar por um e-mail do domínio quando ele
+   existir: aparece melhor e evita spam no pessoal.
+
+Enquanto não há empresa aberta, a página **não** afirma nada que dependa disso:
+sem licença, sem seguro, sem tempo de mercado, sem depoimento inventado, sem
+número de obras. Os preços também não estão fixados — o texto explica que o
+valor sai depois da avaliação, o que é verdade e é como os concorrentes da
+região trabalham. Quando abrir a empresa e tiver licença, colocar isso no hero:
+é o selo que mais converte nesse mercado.
 
 ## Deploy
 
@@ -62,11 +107,11 @@ Projeto estático. Na Vercel, importar o repositório sem framework preset:
 - Build command: *(vazio)*
 - Output directory: `.`
 
-O `vercel.json` já traz os headers de segurança e o cache do site.
+O `vercel.json` traz os headers de segurança e o cache do HTML.
 
 ## Desenvolvimento
 
-Não há dependências nem build. Para ver localmente:
+Sem dependências e sem build:
 
 ```bash
 python3 -m http.server 8000
