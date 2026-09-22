@@ -27,10 +27,16 @@ chrome --headless=new --no-pdf-header-footer \
   --print-to-pdf=material/orlando-led-screens-en.pdf \
   http://localhost:8931/material/flyer-en.html
 
-chrome --headless=new --hide-scrollbars --window-size=1080,1920 \
-  --screenshot=material/whatsapp-led-en.png \
-  http://localhost:8931/material/social-en.html
+python3 material/shot.py \
+  http://localhost:8931/material/social-en.html material/whatsapp-led-en.png
 ```
+
+**Nunca gere o card com `--window-size=1080,1920` direto.** No Chrome headless a
+janela inclui ~87 px de barra, então o *viewport* fica em 1833 px: o rodapé sai
+cortado e o Chrome completa o resto da imagem com a cor de fundo — o erro é
+silencioso, a imagem sai com 1080×1920 certinho. O `shot.py` renderiza com folga
+e corta em 1080×1920 com Pillow (`pip install pillow`), e ainda imprime a cor do
+pixel do rodapé para você conferir que a faixa chegou até a base.
 
 Textos ficam nos dicionários `T` de cada script, um bloco por idioma. O QR
 (`qr.svg`) aponta para o site; refazer com a biblioteca `qrcode` se o domínio
