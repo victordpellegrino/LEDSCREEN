@@ -37,7 +37,8 @@ CLAUDE.md       convenções para quem for mexer no código
 Curto de propósito — formulário longo espanta cliente. Nove campos, todos numa
 tela:
 
-- **Nome\***, **telefone/WhatsApp\***, e-mail (opcional), **cidade ou ZIP\***
+- **Nome\***, **telefone celular\*** (é por onde respondemos), e-mail
+  (opcional), **cidade ou ZIP\***
 - Tipo de imóvel e **interno / externo coberto / externo aberto**
 - **Tipo de fixação** (fixo, inclinável, articulado, embutido, pedestal,
   carrinho móvel, teto, estrutura — com "não sei, me recomende" como padrão)
@@ -52,14 +53,20 @@ preenchido) e um campo-armadilha invisível contra robôs de spam.
 
 ### Para onde o pedido vai
 
-O botão **"Enviar pelo WhatsApp"** monta o resumo do pedido e abre o WhatsApp
-em **+1 (863) 869-1567**, já com a mensagem escrita — o visitante só confirma.
-Abaixo dele há o botão de ligar, que disca o mesmo número.
+O botão **"Enviar por mensagem"** monta o resumo do pedido e abre o app de
+mensagens do visitante já com o texto escrito, endereçado a
+**+1 (863) 869-1567** — ele só aperta enviar. Abaixo há o botão de ligar, que
+disca o mesmo número. Sem WhatsApp: nos Estados Unidos o padrão é ligação e
+SMS.
+
+O link `sms:` funciona no iPhone e na maior parte do Android; no desktop o app
+de mensagens pode não abrir, e por isso o número aparece escrito na página e a
+mensagem de confirmação repete ele.
 
 Não há e-mail publicado no site de propósito: endereço pessoal em landing page
 pega spam e passa impressão de amador. Quando existir e-mail do domínio, basta
-preencher `SETTINGS.email` — o botão de e-mail volta sozinho e passa a ser o
-caminho principal.
+preencher `SETTINGS.email` — o caminho de e-mail volta sozinho e passa a ser o
+principal.
 
 Para o pedido **cair numa caixa de entrada** sem depender do visitante apertar
 enviar, basta um serviço de formulário (Web3Forms, Formspree, Getform e
@@ -72,7 +79,7 @@ formAccessKey: 'sua-chave'
 ```
 
 Com o endpoint preenchido, o site envia por `fetch`, mostra a confirmação na
-própria página e cai de volta no WhatsApp se a chamada falhar.
+própria página e cai de volta no SMS se a chamada falhar.
 
 ## Fotos
 
@@ -98,8 +105,8 @@ Tudo que depende de um dado real está marcado com `TODO(Victor)` no código:
 4. **Fotos de obra** — as atuais são de referência. Assim que houver projeto
    entregue, trocar pelas fotos reais (mesmos nomes) e ajustar a legenda.
 
-Telefone e WhatsApp já estão configurados: **+1 (863) 869-1567**, em
-`SETTINGS.whatsapp` e `SETTINGS.phoneDisplay`.
+O telefone já está configurado: **+1 (863) 869-1567**, em `SETTINGS.phone` e
+`SETTINGS.phoneDisplay`. É o número de ligação e de SMS.
 
 Enquanto não há empresa aberta, a página **não** afirma nada que dependa disso:
 sem licença, sem seguro, sem tempo de mercado, sem depoimento inventado, sem
