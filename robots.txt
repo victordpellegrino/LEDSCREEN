@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO(Victor): trocar pelo domínio real.
+Sitemap: https://TODO-dominio.com/sitemap.xml

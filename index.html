@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orlando LED — LED panels for homes and vacation rentals</title>
+<meta name="description" content="Design, supply and professional installation of LED panels and light walls for homes, vacation rentals and commercial spaces in the Orlando area.">
+<meta name="theme-color" content="#0a0b10">
+<link rel="canonical" href="https://TODO-dominio.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Orlando LED — LED panels for homes and vacation rentals">
+<meta property="og:description" content="LED panels and light walls, designed and installed in Central Florida.">
+<meta property="og:url" content="https://TODO-dominio.com/">
+<meta property="og:image" content="https://TODO-dominio.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0b10'/%3E%3Crect x='7' y='7' width='18' height='18' rx='3' fill='none' stroke='%2300e0ff' stroke-width='2.5'/%3E%3Crect x='13' y='13' width='6' height='6' rx='1.5' fill='%23ff3ea5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090e; --bg-2:#0d0f17; --surface:#12141d; --surface-2:#171a25;
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+  --text:#f3f5fa; --muted:#98a1b4; --muted-2:#6f7889;
+  --cy:#00e0ff; --mg:#ff3ea5; --vi:#8b5cf6;
+  --radius:16px; --radius-lg:24px;
+  --maxw:1160px; --gutter:16px;
+  --shadow:0 20px 60px -20px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.brand{font-family:Sora,Inter,system-ui,sans-serif; line-height:1.15; margin:0}
+h1{font-size:clamp(2rem,5.2vw,3.5rem); font-weight:700; letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.6vw,2.4rem); font-weight:700; letter-spacing:-.02em}
+h3{font-size:1.125rem; font-weight:600}
+p{margin:0}
+a{color:inherit}
+img,svg{max-width:100%}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter)}
+section{padding:clamp(56px,8vw,104px) 0; position:relative}
+.eyebrow{
+  font-size:.75rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--cy); font-weight:600;
+}
+.lead{color:var(--muted); font-size:clamp(1rem,1.6vw,1.125rem); max-width:62ch}
+.head{max-width:66ch; margin-bottom:40px}
+.head h2{margin:12px 0 14px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:13px 22px; border-radius:999px; border:1px solid transparent;
+  font-weight:600; font-size:.95rem; text-decoration:none; cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+  white-space:nowrap;
+}
+.btn:focus-visible{outline:2px solid var(--cy); outline-offset:3px}
+.btn-primary{
+  background:linear-gradient(100deg,var(--cy),var(--vi)); color:#05060a;
+  box-shadow:0 10px 32px -10px rgba(0,224,255,.65);
+}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 16px 40px -12px rgba(0,224,255,.8)}
+.btn-ghost{background:rgba(255,255,255,.04); border-color:var(--line-2); color:var(--text)}
+.btn-ghost:hover{background:rgba(255,255,255,.09); transform:translateY(-2px)}
+.btn-lg{padding:16px 30px; font-size:1rem}
+.btn-block{width:100%}
+
+/* ---------- header ---------- */
+header{
+  position:sticky; top:0; z-index:60; backdrop-filter:blur(14px);
+  background:rgba(8,9,14,.72); border-bottom:1px solid transparent;
+  transition:border-color .2s ease, background .2s ease;
+}
+header.scrolled{border-bottom-color:var(--line); background:rgba(8,9,14,.9)}
+.nav{display:flex; align-items:center; gap:20px; height:68px}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.02rem; text-decoration:none; letter-spacing:-.01em}
+.brand .dot{
+  width:26px; height:26px; border-radius:8px; flex:none;
+  background:linear-gradient(140deg,var(--cy),var(--mg));
+  box-shadow:0 0 18px -2px rgba(0,224,255,.7);
+}
+.nav-links{display:flex; gap:26px; margin-left:34px; font-size:.92rem; color:var(--muted)}
+.nav-links a{text-decoration:none; transition:color .15s ease}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex; align-items:center; gap:10px; margin-left:auto}
+.lang{
+  display:inline-flex; border:1px solid var(--line-2); border-radius:999px;
+  padding:3px; background:rgba(255,255,255,.03);
+}
+.lang button{
+  border:0; background:transparent; color:var(--muted-2); font:inherit; font-size:.78rem;
+  font-weight:600; padding:5px 11px; border-radius:999px; cursor:pointer; letter-spacing:.04em;
+}
+.lang button[aria-pressed="true"]{background:rgba(255,255,255,.12); color:var(--text)}
+.burger{
+  display:none; background:transparent; border:1px solid var(--line-2); border-radius:12px;
+  width:42px; height:42px; cursor:pointer; color:var(--text); align-items:center; justify-content:center;
+}
+@media (max-width:900px){
+  .nav-links{
+    display:none; position:absolute; left:var(--gutter); right:var(--gutter); top:72px;
+    flex-direction:column; gap:0; background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); padding:8px; box-shadow:var(--shadow);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 14px; border-radius:10px}
+  .nav-links a:hover{background:rgba(255,255,255,.05)}
+  .burger{display:inline-flex}
+  .nav-right{margin-left:auto}
+  .nav .btn-header{display:none}
+}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(48px,7vw,86px); overflow:hidden}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(32px,5vw,64px); align-items:center}
+@media (max-width:920px){.hero-grid{grid-template-columns:1fr; gap:40px}}
+.hero h1{margin:14px 0 18px}
+.hero h1 .glow{
+  background:linear-gradient(100deg,var(--cy),var(--mg));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 22px}
+.hero-badges{display:flex; flex-wrap:wrap; gap:8px}
+.badge{
+  font-size:.8rem; color:var(--muted); border:1px solid var(--line);
+  padding:7px 13px; border-radius:999px; background:rgba(255,255,255,.02);
+}
+.glowfield{position:absolute; inset:-20% -10% auto; height:520px; pointer-events:none; z-index:-1;
+  background:radial-gradient(45% 55% at 20% 30%,rgba(0,224,255,.18),transparent 70%),
+             radial-gradient(40% 50% at 80% 20%,rgba(255,62,165,.16),transparent 70%);
+  filter:blur(6px);
+}
+/* hero visual: stylised LED wall */
+.wall{
+  aspect-ratio:4/3.4; border-radius:var(--radius-lg); border:1px solid var(--line-2);
+  background:linear-gradient(160deg,var(--bg-2),#05060a); position:relative; overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.wall-grid{position:absolute; inset:9%; display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:1fr; gap:7px}
+.cell{border-radius:6px; background:rgba(255,255,255,.035); animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.cell{animation:none; opacity:.8}}
+.wall-floor{
+  position:absolute; left:0; right:0; bottom:0; height:22%;
+  background:linear-gradient(to top,rgba(0,224,255,.10),transparent);
+}
+
+/* ---------- cards ---------- */
+.grid{display:grid; gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:980px){.g4{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{
+  background:linear-gradient(180deg,var(--surface),var(--bg-2));
+  border:1px solid var(--line); border-radius:var(--radius); padding:24px;
+  transition:border-color .2s ease, transform .2s ease;
+}
+.card:hover{border-color:var(--line-2); transform:translateY(-3px)}
+.card h3{margin:16px 0 8px}
+.card p{color:var(--muted); font-size:.95rem}
+.ico{
+  width:44px; height:44px; border-radius:12px; display:grid; place-items:center;
+  background:rgba(0,224,255,.09); border:1px solid rgba(0,224,255,.22); color:var(--cy);
+}
+.card:nth-child(2n) .ico{background:rgba(255,62,165,.09); border-color:rgba(255,62,165,.22); color:var(--mg)}
+.card:nth-child(3n) .ico{background:rgba(139,92,246,.10); border-color:rgba(139,92,246,.24); color:#a78bfa}
+.card ul{margin:14px 0 0; padding-left:18px; color:var(--muted); font-size:.92rem}
+.card li{margin:6px 0}
+
+/* ---------- why / stats strip ---------- */
+.strip{
+  border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden;
+  background:linear-gradient(140deg,rgba(0,224,255,.06),rgba(255,62,165,.05));
+  display:grid; grid-template-columns:repeat(4,1fr);
+}
+@media (max-width:820px){.strip{grid-template-columns:repeat(2,1fr)}}
+.strip div{padding:24px; border-right:1px solid var(--line)}
+.strip div:last-child{border-right:0}
+@media (max-width:820px){.strip div:nth-child(2n){border-right:0} .strip div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.strip b{display:block; font-family:Sora,sans-serif; font-size:1.5rem; margin-bottom:4px}
+.strip span{color:var(--muted); font-size:.88rem}
+
+/* ---------- packages ---------- */
+.plan{position:relative; display:flex; flex-direction:column}
+.plan.featured{border-color:rgba(0,224,255,.35); box-shadow:0 0 0 1px rgba(0,224,255,.12), 0 24px 60px -30px rgba(0,224,255,.5)}
+.plan .tag{
+  position:absolute; top:-11px; left:24px; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+  background:linear-gradient(100deg,var(--cy),var(--vi)); color:#05060a; font-weight:700;
+  padding:4px 10px; border-radius:999px;
+}
+.price{font-family:Sora,sans-serif; font-size:1.35rem; margin:10px 0 2px}
+.price small{display:block; font-family:Inter,sans-serif; font-size:.82rem; color:var(--muted-2); font-weight:400; margin-top:4px}
+.plan ul{flex:1}
+.plan .btn{margin-top:20px}
+
+/* ---------- process ---------- */
+.steps{counter-reset:step; display:grid; gap:18px; grid-template-columns:repeat(4,1fr)}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.step{border-top:2px solid var(--line-2); padding-top:18px; position:relative}
+.step::before{
+  counter-increment:step; content:"0" counter(step);
+  font-family:Sora,sans-serif; font-size:.85rem; color:var(--cy); font-weight:700;
+  letter-spacing:.08em;
+}
+.step h3{margin:8px 0 8px}
+.step p{color:var(--muted); font-size:.93rem}
+
+/* ---------- gallery ---------- */
+.tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+@media (max-width:860px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:540px){.tiles{grid-template-columns:1fr}}
+.tile{
+  aspect-ratio:4/3; border-radius:var(--radius); border:1px solid var(--line);
+  position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:16px;
+}
+.tile span{font-size:.85rem; font-weight:600; position:relative; z-index:2; text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.tile::after{content:""; position:absolute; inset:0; background:linear-gradient(to top,rgba(5,6,10,.85),transparent 60%)}
+.t1{background:linear-gradient(135deg,#04131c,#00e0ff33 55%,#050810)}
+.t2{background:linear-gradient(135deg,#1a0620,#ff3ea533 55%,#050810)}
+.t3{background:linear-gradient(135deg,#0b0620,#8b5cf633 55%,#050810)}
+.t4{background:linear-gradient(135deg,#041a16,#00ffb733 55%,#050810)}
+.t5{background:linear-gradient(135deg,#1c1204,#ffb03e33 55%,#050810)}
+.t6{background:linear-gradient(135deg,#07101c,#3e8bff33 55%,#050810)}
+.note{color:var(--muted-2); font-size:.82rem; margin-top:14px}
+
+/* ---------- faq ---------- */
+.faq{max-width:840px}
+details{border-bottom:1px solid var(--line); padding:4px 0}
+summary{
+  cursor:pointer; padding:18px 36px 18px 0; font-weight:600; position:relative; list-style:none;
+  font-size:1rem;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+"; position:absolute; right:6px; top:50%; transform:translateY(-50%);
+  color:var(--cy); font-size:1.3rem; font-weight:400; line-height:1;
+}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--muted); padding:0 36px 18px 0; font-size:.95rem}
+
+/* ---------- form ---------- */
+.contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px,4vw,56px); align-items:start}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+form{
+  background:linear-gradient(180deg,var(--surface),var(--bg-2));
+  border:1px solid var(--line); border-radius:var(--radius-lg); padding:clamp(20px,3vw,30px);
+}
+.field{margin-bottom:16px}
+.field label{display:block; font-size:.82rem; font-weight:600; color:var(--muted); margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%; background:#0b0d14; border:1px solid var(--line-2); color:var(--text);
+  border-radius:12px; padding:12px 14px; font:inherit; font-size:.95rem;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.field textarea{min-height:104px; resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none; border-color:var(--cy); box-shadow:0 0 0 3px rgba(0,224,255,.16);
+}
+.field .err{display:none; color:#ff7d9a; font-size:.8rem; margin-top:6px}
+.field.invalid input,.field.invalid select{border-color:#ff7d9a}
+.field.invalid .err{display:block}
+.row2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+.form-note{color:var(--muted-2); font-size:.8rem; margin-top:12px; text-align:center}
+.contact-list{list-style:none; margin:26px 0 0; padding:0}
+.contact-list li{display:flex; gap:12px; align-items:flex-start; margin-bottom:18px}
+.contact-list b{display:block; font-size:.93rem}
+.contact-list span{color:var(--muted); font-size:.9rem}
+.contact-list a{color:var(--cy); text-decoration:none}
+.contact-list a:hover{text-decoration:underline}
+
+/* ---------- final cta ---------- */
+.cta-box{
+  border:1px solid var(--line-2); border-radius:var(--radius-lg); padding:clamp(28px,5vw,56px);
+  text-align:center; background:
+    radial-gradient(60% 120% at 50% 0%,rgba(0,224,255,.14),transparent 70%),
+    linear-gradient(180deg,var(--surface),var(--bg-2));
+}
+.cta-box p{margin:14px auto 26px; max-width:52ch}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)}
+.foot{display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:flex-start}
+.foot-links{display:flex; flex-wrap:wrap; gap:18px; font-size:.9rem}
+.foot-links a{text-decoration:none}
+.foot-links a:hover{color:var(--text)}
+.foot small{display:block; color:var(--muted-2); font-size:.82rem; margin-top:18px}
+
+/* ---------- float whatsapp ---------- */
+.float{
+  position:fixed; right:16px; bottom:16px; z-index:70; width:54px; height:54px; border-radius:50%;
+  background:#25d366; display:grid; place-items:center; color:#062b14; text-decoration:none;
+  box-shadow:0 14px 34px -10px rgba(37,211,102,.7); transition:transform .18s ease;
+}
+.float:hover{transform:scale(1.07)}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
+.rv.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1; transform:none; transition:none}}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:16px; top:10px; z-index:100; background:var(--surface); padding:10px 16px; border-radius:10px}
+</style>
+</head>
+<body>
+<a class="skip" href="#quote" data-i18n="skip">Skip to the quote form</a>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="dot"></span>Orlando LED</a>
+    <nav class="nav-links" id="menu">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#why" data-i18n="nav.why">Why LED</a>
+      <a href="#packages" data-i18n="nav.packages">Packages</a>
+      <a href="#process" data-i18n="nav.process">How it works</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+      </div>
+      <a class="btn btn-primary btn-header" href="#quote" data-i18n="nav.cta">Free quote</a>
+      <button class="burger" type="button" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="glowfield"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow">Orlando · Kissimmee · Davenport · Windermere</p>
+      <h1><span data-i18n="hero.h1a">LED panels that make your home</span> <span class="glow" data-i18n="hero.h1b">unforgettable</span></h1>
+      <p class="lead" data-i18n="hero.sub">We design, supply and install LED panels, light walls and accent lighting for houses, vacation rentals and commercial spaces across Central Florida — wiring concealed, app control set up, ready to use the same day.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="#quote" data-i18n="hero.cta1">Get a free quote</a>
+        <a class="btn btn-ghost btn-lg" href="#" data-whatsapp data-i18n="hero.cta2">Talk on WhatsApp</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge" data-i18n="hero.b1">Free assessment</span>
+        <span class="badge" data-i18n="hero.b2">Installed by our own crew</span>
+        <span class="badge" data-i18n="hero.b3">We speak English &amp; Portuguese</span>
+      </div>
+    </div>
+    <div class="wall" aria-hidden="true">
+      <div class="wall-grid" id="wallGrid"></div>
+      <div class="wall-floor"></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow" data-i18n="svc.eyebrow">What we install</p>
+      <h2 data-i18n="svc.h2">Light that fits the room — and the purpose</h2>
+      <p class="lead" data-i18n="svc.sub">Every project starts with how the space is used. A game room for guests is not lit like a living room, and a pool cage is not lit like a home theater.</p>
+    </div>
+    <div class="grid g4">
+      <article class="card rv">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></div>
+        <h3 data-i18n="svc.1.t">Homes &amp; residences</h3>
+        <p data-i18n="svc.1.d">Accent walls, cove and ceiling lighting, home theaters, stairs and kitchen under-cabinet lines.</p>
+      </article>
+      <article class="card rv">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3 data-i18n="svc.2.t">Vacation rentals</h3>
+        <p data-i18n="svc.2.d">Themed bedrooms, game rooms and photo-ready spaces that stand out in listing photos and guest reviews.</p>
+      </article>
+      <article class="card rv">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c2 0 2-1.5 4-1.5S8 16 10 16s2-1.5 4-1.5S16 16 18 16s2-1.5 4-1.5"/><path d="M2 20c2 0 2-1.5 4-1.5S8 20 10 20s2-1.5 4-1.5S16 20 18 20s2-1.5 4-1.5"/><path d="M7 12V5a2 2 0 0 1 4 0"/><path d="M15 12V5a2 2 0 0 1 4 0"/></svg></div>
+        <h3 data-i18n="svc.3.t">Pool, patio &amp; lanai</h3>
+        <p data-i18n="svc.3.d">Outdoor-rated fixtures for pool cages, decks and patios, with scenes for evenings and parties.</p>
+      </article>
+      <article class="card rv">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3 data-i18n="svc.4.t">Commercial &amp; retail</h3>
+        <p data-i18n="svc.4.d">Storefronts, kiosks, signage and backlit displays sized to the space and to your brand colors.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow" data-i18n="why.eyebrow">Why LED</p>
+      <h2 data-i18n="why.h2">A finish you can change with your phone</h2>
+      <p class="lead" data-i18n="why.sub">Modern LED panels draw little power, run cool and give you every color and scene without touching the fixture again.</p>
+    </div>
+    <div class="strip rv">
+      <div><b data-i18n="why.1.t">Low power draw</b><span data-i18n="why.1.d">LED fixtures use a fraction of the energy of the halogen and incandescent lighting they replace.</span></div>
+      <div><b data-i18n="why.2.t">App &amp; voice control</b><span data-i18n="why.2.d">Scenes, dimming and schedules from your phone, and integration with Alexa or Google Home.</span></div>
+      <div><b data-i18n="why.3.t">Any color, any mood</b><span data-i18n="why.3.d">Warm white for dinner, full color for the game room, one scene per moment of the day.</span></div>
+      <div><b data-i18n="why.4.t">Clean installation</b><span data-i18n="why.4.d">Concealed wiring, proper power supplies and drivers, finish work left the way we found it.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow" data-i18n="gal.eyebrow">Ideas</p>
+      <h2 data-i18n="gal.h2">Where people put them</h2>
+    </div>
+    <div class="tiles rv">
+      <div class="tile t1"><span data-i18n="gal.1">Living room accent wall</span></div>
+      <div class="tile t2"><span data-i18n="gal.2">Game room for guests</span></div>
+      <div class="tile t3"><span data-i18n="gal.3">Themed kids bedroom</span></div>
+      <div class="tile t4"><span data-i18n="gal.4">Pool cage &amp; lanai</span></div>
+      <div class="tile t5"><span data-i18n="gal.5">Bar, kitchen island &amp; cabinets</span></div>
+      <div class="tile t6"><span data-i18n="gal.6">Storefront &amp; signage</span></div>
+    </div>
+    <!-- TODO(Victor): trocar os tiles por fotos reais de projetos instalados (pasta /img). -->
+    <p class="note" data-i18n="gal.note">Concept previews. Project photos go here as soon as the first installations are documented.</p>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow" data-i18n="pkg.eyebrow">Packages</p>
+      <h2 data-i18n="pkg.h2">Start with one wall or light the whole house</h2>
+      <p class="lead" data-i18n="pkg.sub">Every quote is built from the actual measurements of your space. These are the three shapes most projects take.</p>
+    </div>
+    <div class="grid g3">
+      <!-- TODO(Victor): definir preços ("a partir de US$ ...") de cada pacote. -->
+      <article class="card plan rv">
+        <h3 data-i18n="pkg.1.t">Starter</h3>
+        <p class="price" data-i18n="pkg.1.p">On request<small data-i18n="pkg.1.ps">One room, one feature wall</small></p>
+        <ul>
+          <li data-i18n="pkg.1.f1">On-site assessment and light plan</li>
+          <li data-i18n="pkg.1.f2">Panels or strips for a single wall</li>
+          <li data-i18n="pkg.1.f3">Power supply, dimmer and concealed wiring</li>
+          <li data-i18n="pkg.1.f4">App setup and a walkthrough</li>
+        </ul>
+        <a class="btn btn-ghost btn-block" href="#quote" data-i18n="pkg.cta">Request a quote</a>
+      </article>
+      <article class="card plan featured rv">
+        <span class="tag" data-i18n="pkg.tag">Most requested</span>
+        <h3 data-i18n="pkg.2.t">Signature</h3>
+        <p class="price" data-i18n="pkg.2.p">On request<small data-i18n="pkg.2.ps">Game room, theater or full living area</small></p>
+        <ul>
+          <li data-i18n="pkg.2.f1">Everything in Starter</li>
+          <li data-i18n="pkg.2.f2">Multi-zone layout with saved scenes</li>
+          <li data-i18n="pkg.2.f3">Ceiling, cove or perimeter lighting</li>
+          <li data-i18n="pkg.2.f4">Alexa / Google Home integration</li>
+          <li data-i18n="pkg.2.f5">Photos of the finished room for your listing</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="#quote" data-i18n="pkg.cta">Request a quote</a>
+      </article>
+      <article class="card plan rv">
+        <h3 data-i18n="pkg.3.t">Full property</h3>
+        <p class="price" data-i18n="pkg.3.p">On request<small data-i18n="pkg.3.ps">Whole home, rental or commercial space</small></p>
+        <ul>
+          <li data-i18n="pkg.3.f1">Everything in Signature</li>
+          <li data-i18n="pkg.3.f2">Indoor and outdoor zones, including pool area</li>
+          <li data-i18n="pkg.3.f3">Project scheduled around your booking calendar</li>
+          <li data-i18n="pkg.3.f4">Handover document with scenes and controls</li>
+          <li data-i18n="pkg.3.f5">Priority support for property managers</li>
+        </ul>
+        <a class="btn btn-ghost btn-block" href="#quote" data-i18n="pkg.cta">Request a quote</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow" data-i18n="prc.eyebrow">How it works</p>
+      <h2 data-i18n="prc.h2">From first message to lights on</h2>
+    </div>
+    <div class="steps rv">
+      <div class="step">
+        <h3 data-i18n="prc.1.t">Assessment</h3>
+        <p data-i18n="prc.1.d">Send photos or a short video of the space, or book a visit. We confirm measurements, power access and what you want the room to feel like.</p>
+      </div>
+      <div class="step">
+        <h3 data-i18n="prc.2.t">Light plan &amp; quote</h3>
+        <p data-i18n="prc.2.d">You get a plan showing where each fixture goes, which products we use and a closed price — no surprises during the install.</p>
+      </div>
+      <div class="step">
+        <h3 data-i18n="prc.3.t">Installation</h3>
+        <p data-i18n="prc.3.d">Our crew installs, conceals the wiring and protects the finishes. We schedule around guests and check-outs for rental properties.</p>
+      </div>
+      <div class="step">
+        <h3 data-i18n="prc.4.t">Setup &amp; support</h3>
+        <p data-i18n="prc.4.d">We configure the app, save your scenes, walk you through the controls and stay reachable if anything needs adjusting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rental">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <p class="eyebrow" data-i18n="rnt.eyebrow">For vacation rental owners</p>
+      <h2 data-i18n="rnt.h2">A room guests photograph is a room that gets booked</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto" data-i18n="rnt.sub">Game rooms, themed bedrooms and lit pool areas are what guests share and what listing photos sell. We work around your calendar and hand the property back ready for the next check-in.</p>
+      <a class="btn btn-primary btn-lg" href="#quote" data-i18n="rnt.cta">Plan my property</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+      <h2 data-i18n="faq.h2">Questions we get before every project</h2>
+    </div>
+    <div class="faq rv">
+      <details>
+        <summary data-i18n="faq.1.q">How long does an installation take?</summary>
+        <p data-i18n="faq.1.a">Most single-room projects are finished in one visit. Larger projects are split into scheduled days, confirmed with you before we start.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.2.q">Do you work with property managers and rental owners who live abroad?</summary>
+        <p data-i18n="faq.2.a">Yes. We can run the whole process remotely — assessment by video, approval by message, and photos of the finished result when we hand the keys back.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.3.q">Do the panels work with Alexa or Google Home?</summary>
+        <p data-i18n="faq.3.a">The systems we install are app-controlled and integrate with Alexa and Google Home. We set the integration up and save your scenes before we leave.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.4.q">Will it damage the wall or ceiling?</summary>
+        <p data-i18n="faq.4.a">We plan mounting and wiring during the assessment so the install is clean and reversible wherever possible, and we tell you upfront if a surface needs patching afterwards.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.5.q">Which areas do you serve?</summary>
+        <p data-i18n="faq.5.a">The Orlando metro area and surrounding Central Florida communities. Ask about your address — if it is outside our usual radius we will tell you before quoting.</p>
+      </details>
+      <!-- TODO(Victor): confirmar prazo exato da garantia (peças e mão de obra) antes de publicar. -->
+      <details>
+        <summary data-i18n="faq.6.q">Is there a warranty?</summary>
+        <p data-i18n="faq.6.a">Fixtures carry their manufacturer warranty, and our installation work is covered as stated in your quote. Ask us for the exact terms for your project.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <p class="eyebrow" data-i18n="qt.eyebrow">Free quote</p>
+      <h2 data-i18n="qt.h2">Tell us about the space</h2>
+      <p class="lead" data-i18n="qt.sub">Send the room, the city and what you have in mind. We reply with next steps and, when we have enough detail, a first estimate.</p>
+      <ul class="contact-list">
+        <li>
+          <div class="ico" style="width:36px;height:36px;border-radius:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <div><b data-i18n="qt.c1">Phone / WhatsApp</b><span><a href="#" data-phone-link>+1 (000) 000-0000</a></span></div>
+        </li>
+        <li>
+          <div class="ico" style="width:36px;height:36px;border-radius:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div>
+          <div><b data-i18n="qt.c2">Email</b><span><a href="#" data-email-link>hello@example.com</a></span></div>
+        </li>
+        <li>
+          <div class="ico" style="width:36px;height:36px;border-radius:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><b data-i18n="qt.c3">Service area</b><span data-i18n="qt.c3d">Orlando, Kissimmee, Davenport, Clermont, Windermere and nearby Central Florida</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <form id="quoteForm" novalidate class="rv">
+      <div class="row2">
+        <div class="field">
+          <label for="name" data-i18n="f.name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <p class="err" data-i18n="f.err.name">Please tell us your name.</p>
+        </div>
+        <div class="field">
+          <label for="phone" data-i18n="f.phone">Phone / WhatsApp</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          <p class="err" data-i18n="f.err.phone">Please enter a phone number.</p>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="email" data-i18n="f.email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+          <p class="err" data-i18n="f.err.email">This email address looks incomplete.</p>
+        </div>
+        <div class="field">
+          <label for="city" data-i18n="f.city">City or ZIP</label>
+          <input id="city" name="city" type="text" autocomplete="postal-code" required>
+          <p class="err" data-i18n="f.err.city">Please enter the city or ZIP code.</p>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="ptype" data-i18n="f.ptype">Property type</label>
+          <select id="ptype" name="ptype">
+            <option value="home" data-i18n="f.ptype.1">Home I live in</option>
+            <option value="rental" data-i18n="f.ptype.2">Vacation rental</option>
+            <option value="commercial" data-i18n="f.ptype.3">Commercial space</option>
+            <option value="other" data-i18n="f.ptype.4">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="scope" data-i18n="f.scope">What do you want to light?</label>
+          <select id="scope" name="scope">
+            <option value="one-wall" data-i18n="f.scope.1">One wall or one room</option>
+            <option value="gameroom" data-i18n="f.scope.2">Game room / theater</option>
+            <option value="outdoor" data-i18n="f.scope.3">Pool, patio or lanai</option>
+            <option value="full" data-i18n="f.scope.4">The whole property</option>
+            <option value="unsure" data-i18n="f.scope.5">Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="msg" data-i18n="f.msg">Anything else we should know?</label>
+        <textarea id="msg" name="msg" placeholder="" data-i18n-ph="f.msg.ph"></textarea>
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" type="submit" data-i18n="f.submit">Send on WhatsApp</button>
+      <button class="btn btn-ghost btn-block" type="button" id="sendEmail" style="margin-top:10px" data-i18n="f.submit2">Send by email instead</button>
+      <p class="form-note" data-i18n="f.note">Your details open a pre-filled message — nothing is sent until you confirm it.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><span class="dot"></span>Orlando LED</a>
+        <small data-i18n="ft.tag">LED panels and lighting, designed and installed in Central Florida.</small>
+      </div>
+      <div>
+        <div class="foot-links">
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#packages" data-i18n="nav.packages">Packages</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#quote" data-i18n="nav.cta">Free quote</a>
+        </div>
+        <small><span id="year"></span> Orlando LED. <span data-i18n="ft.rights">All rights reserved.</span></small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="float" href="#" data-whatsapp aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.1c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.2.1-1.9-.1a13 13 0 0 1-5.6-4.6c-.4-.6-1.1-1.7-1.1-3.2S7.9 7.4 8.2 7a1 1 0 0 1 .8-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.1 2.1 1.3.2.1.4 0 .5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.4.3.1.2.1.6-.1 1.1Z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Orlando LED",
+  "description":"Design, supply and installation of LED panels and accent lighting for homes, vacation rentals and commercial spaces in the Orlando area.",
+  "url":"https://TODO-dominio.com/",
+  "telephone":"+10000000000",
+  "email":"hello@example.com",
+  "areaServed":["Orlando","Kissimmee","Davenport","Clermont","Windermere"],
+  "address":{"@type":"PostalAddress","addressLocality":"Orlando","addressRegion":"FL","addressCountry":"US"}
+}
+</script>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ------------------------------------------------------------------
+     TODO(Victor): trocar pelos dados reais antes de publicar.
+     whatsapp: só dígitos, com código do país (ex.: 14075551234)
+  ------------------------------------------------------------------ */
+  var CONTACT = {
+    whatsapp: '10000000000',
+    phoneDisplay: '+1 (000) 000-0000',
+    email: 'hello@example.com'
+  };
+
+  var I18N = {
+    en: {},
+    pt: {
+      'skip':'Ir para o formulário',
+      'nav.services':'Serviços','nav.why':'Por que LED','nav.packages':'Pacotes',
+      'nav.process':'Como funciona','nav.faq':'Dúvidas','nav.cta':'Orçamento grátis',
+      'hero.eyebrow':'Orlando · Kissimmee · Davenport · Windermere',
+      'hero.h1a':'Painéis de LED que deixam sua casa','hero.h1b':'inesquecível',
+      'hero.sub':'Projetamos, fornecemos e instalamos painéis de LED, paredes de luz e iluminação decorativa em casas, casas de temporada e espaços comerciais na Flórida Central — fiação embutida, controle por aplicativo configurado e tudo pronto no mesmo dia.',
+      'hero.cta1':'Quero um orçamento','hero.cta2':'Falar no WhatsApp',
+      'hero.b1':'Avaliação gratuita','hero.b2':'Equipe própria de instalação','hero.b3':'Atendemos em português e inglês',
+      'svc.eyebrow':'O que instalamos','svc.h2':'Luz que combina com o ambiente — e com o uso dele',
+      'svc.sub':'Todo projeto começa pelo uso do espaço. Uma sala de jogos para hóspedes não é iluminada como uma sala de estar, e uma área de piscina não é iluminada como um home theater.',
+      'svc.1.t':'Casas e residências','svc.1.d':'Paredes de destaque, sancas e forro, home theater, escadas e iluminação sob os armários da cozinha.',
+      'svc.2.t':'Casas de temporada','svc.2.d':'Quartos temáticos, salas de jogos e ambientes fotogênicos que aparecem nas fotos do anúncio e nas avaliações.',
+      'svc.3.t':'Piscina, varanda e lanai','svc.3.d':'Luminárias para uso externo em área de piscina, deck e varanda, com cenas para a noite e para festas.',
+      'svc.4.t':'Comercial e varejo','svc.4.d':'Fachadas, quiosques, letreiros e displays iluminados no tamanho do espaço e nas cores da sua marca.',
+      'why.eyebrow':'Por que LED','why.h2':'Um acabamento que você muda pelo celular',
+      'why.sub':'Painéis de LED modernos consomem pouco, esquentam pouco e entregam qualquer cor ou cena sem precisar mexer na luminária de novo.',
+      'why.1.t':'Consumo baixo','why.1.d':'Luminárias de LED consomem uma fração da energia da iluminação halógena e incandescente que substituem.',
+      'why.2.t':'Controle por app e voz','why.2.d':'Cenas, dimerização e programações pelo celular, com integração com Alexa e Google Home.',
+      'why.3.t':'Qualquer cor, qualquer clima','why.3.d':'Branco quente no jantar, colorido na sala de jogos, uma cena para cada momento do dia.',
+      'why.4.t':'Instalação limpa','why.4.d':'Fiação embutida, fontes e drivers corretos e o acabamento entregue como estava.',
+      'gal.eyebrow':'Ideias','gal.h2':'Onde as pessoas instalam',
+      'gal.1':'Parede de destaque na sala','gal.2':'Sala de jogos para hóspedes','gal.3':'Quarto infantil temático',
+      'gal.4':'Área de piscina e lanai','gal.5':'Bar, ilha e armários','gal.6':'Fachada e letreiro',
+      'gal.note':'Imagens conceituais. As fotos dos projetos entram aqui assim que as primeiras instalações forem registradas.',
+      'pkg.eyebrow':'Pacotes','pkg.h2':'Comece por uma parede ou ilumine a casa inteira',
+      'pkg.sub':'Cada orçamento sai das medidas reais do seu espaço. Estes são os três formatos mais comuns de projeto.',
+      'pkg.tag':'Mais pedido','pkg.cta':'Pedir orçamento',
+      'pkg.1.t':'Starter','pkg.1.p':'Sob consulta','pkg.1.ps':'Um ambiente, uma parede de destaque',
+      'pkg.1.f1':'Avaliação no local e plano de iluminação','pkg.1.f2':'Painéis ou fitas para uma parede',
+      'pkg.1.f3':'Fonte, dimmer e fiação embutida','pkg.1.f4':'Configuração do app e demonstração',
+      'pkg.2.t':'Signature','pkg.2.p':'Sob consulta','pkg.2.ps':'Sala de jogos, home theater ou área social',
+      'pkg.2.f1':'Tudo do Starter','pkg.2.f2':'Layout em várias zonas com cenas salvas',
+      'pkg.2.f3':'Iluminação de forro, sanca ou perimetral','pkg.2.f4':'Integração com Alexa / Google Home',
+      'pkg.2.f5':'Fotos do ambiente pronto para o seu anúncio',
+      'pkg.3.t':'Propriedade completa','pkg.3.p':'Sob consulta','pkg.3.ps':'Casa inteira, casa de temporada ou espaço comercial',
+      'pkg.3.f1':'Tudo do Signature','pkg.3.f2':'Zonas internas e externas, incluindo a área da piscina',
+      'pkg.3.f3':'Obra agendada conforme seu calendário de reservas','pkg.3.f4':'Documento de entrega com cenas e controles',
+      'pkg.3.f5':'Suporte prioritário para administradoras',
+      'prc.eyebrow':'Como funciona','prc.h2':'Da primeira mensagem até a luz acesa',
+      'prc.1.t':'Avaliação','prc.1.d':'Mande fotos ou um vídeo curto do espaço, ou agende uma visita. Confirmamos medidas, acesso à energia e o clima que você quer no ambiente.',
+      'prc.2.t':'Projeto e orçamento','prc.2.d':'Você recebe o plano com a posição de cada peça, quais produtos usamos e o preço fechado — sem surpresa durante a instalação.',
+      'prc.3.t':'Instalação','prc.3.d':'Nossa equipe instala, embute a fiação e protege os acabamentos. Em casas de temporada, agendamos conforme os check-outs.',
+      'prc.4.t':'Configuração e suporte','prc.4.d':'Configuramos o app, salvamos suas cenas, explicamos os controles e seguimos disponíveis para ajustes.',
+      'rnt.eyebrow':'Para donos de casa de temporada','rnt.h2':'O ambiente que o hóspede fotografa é o ambiente que enche a agenda',
+      'rnt.sub':'Sala de jogos, quarto temático e área de piscina iluminada são o que o hóspede compartilha e o que vende nas fotos do anúncio. Trabalhamos no seu calendário e devolvemos a casa pronta para o próximo check-in.',
+      'rnt.cta':'Quero um projeto para minha casa',
+      'faq.eyebrow':'Dúvidas','faq.h2':'O que perguntam antes de todo projeto',
+      'faq.1.q':'Quanto tempo leva a instalação?','faq.1.a':'A maioria dos projetos de um ambiente termina em uma visita. Projetos maiores são divididos em dias agendados, combinados com você antes de começar.',
+      'faq.2.q':'Vocês atendem administradoras e donos que moram fora?','faq.2.a':'Sim. Podemos conduzir todo o processo à distância — avaliação por vídeo, aprovação por mensagem e fotos do resultado na entrega.',
+      'faq.3.q':'Funciona com Alexa ou Google Home?','faq.3.a':'Os sistemas que instalamos são controlados por aplicativo e integram com Alexa e Google Home. Deixamos a integração pronta e as cenas salvas antes de sair.',
+      'faq.4.q':'Vai danificar a parede ou o forro?','faq.4.a':'A fixação e a fiação são planejadas na avaliação para que a instalação fique limpa e, sempre que possível, reversível. Se alguma superfície precisar de reparo depois, avisamos antes.',
+      'faq.5.q':'Quais regiões vocês atendem?','faq.5.a':'A região metropolitana de Orlando e as cidades vizinhas da Flórida Central. Pergunte pelo seu endereço — se estiver fora do nosso raio, avisamos antes de orçar.',
+      'faq.6.q':'Tem garantia?','faq.6.a':'As peças têm a garantia do fabricante e o serviço de instalação é coberto conforme descrito no seu orçamento. Peça os termos exatos do seu projeto.',
+      'qt.eyebrow':'Orçamento grátis','qt.h2':'Conte sobre o espaço',
+      'qt.sub':'Mande o ambiente, a cidade e a ideia que você tem em mente. Respondemos com os próximos passos e, quando houver detalhe suficiente, uma primeira estimativa.',
+      'qt.c1':'Telefone / WhatsApp','qt.c2':'E-mail','qt.c3':'Região atendida',
+      'qt.c3d':'Orlando, Kissimmee, Davenport, Clermont, Windermere e região',
+      'f.name':'Nome','f.phone':'Telefone / WhatsApp','f.email':'E-mail','f.city':'Cidade ou ZIP',
+      'f.err.name':'Diga seu nome, por favor.','f.err.phone':'Informe um telefone.',
+      'f.err.email':'Esse e-mail parece incompleto.','f.err.city':'Informe a cidade ou o ZIP code.',
+      'f.ptype':'Tipo de imóvel','f.ptype.1':'Casa onde eu moro','f.ptype.2':'Casa de temporada',
+      'f.ptype.3':'Espaço comercial','f.ptype.4':'Outro',
+      'f.scope':'O que você quer iluminar?','f.scope.1':'Uma parede ou um ambiente',
+      'f.scope.2':'Sala de jogos / home theater','f.scope.3':'Piscina, varanda ou lanai',
+      'f.scope.4':'A propriedade inteira','f.scope.5':'Ainda não sei',
+      'f.msg':'Mais alguma coisa que devemos saber?','f.msg.ph':'Medidas, cores, prazo, fotos que você já tem...',
+      'f.submit':'Enviar pelo WhatsApp','f.submit2':'Prefiro enviar por e-mail',
+      'f.note':'Seus dados abrem uma mensagem pronta — nada é enviado até você confirmar.',
+      'ft.tag':'Painéis de LED e iluminação, projetados e instalados na Flórida Central.',
+      'ft.rights':'Todos os direitos reservados.',
+      'wa.hello':'Olá! Quero um orçamento de painéis de LED.',
+      'wa.name':'Nome','wa.phone':'Telefone','wa.email':'E-mail','wa.city':'Cidade/ZIP',
+      'wa.ptype':'Imóvel','wa.scope':'Projeto','wa.msg':'Observações',
+      'mail.subject':'Orçamento de painéis de LED'
+    }
+  };
+  var EN_EXTRA = {
+    'wa.hello':'Hi! I would like a quote for LED panels.',
+    'wa.name':'Name','wa.phone':'Phone','wa.email':'Email','wa.city':'City/ZIP',
+    'wa.ptype':'Property','wa.scope':'Project','wa.msg':'Notes',
+    'mail.subject':'LED panel quote request'
+  };
+
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var lang = 'en';
+
+  /* capture the English copy straight from the markup so EN needs no dictionary */
+  $$('[data-i18n]').forEach(function(el){ I18N.en[el.getAttribute('data-i18n')] = el.innerHTML; });
+  $$('[data-i18n-ph]').forEach(function(el){ I18N.en[el.getAttribute('data-i18n-ph')] = el.placeholder || ''; });
+  Object.keys(EN_EXTRA).forEach(function(k){ I18N.en[k] = EN_EXTRA[k]; });
+
+  function t(key){
+    var d = I18N[lang] || {};
+    return (d[key] != null ? d[key] : I18N.en[key]) || '';
+  }
+
+  function setLang(next){
+    lang = (next === 'pt') ? 'pt' : 'en';
+    document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
+    $$('[data-i18n]').forEach(function(el){
+      var v = t(el.getAttribute('data-i18n'));
+      if (v) el.innerHTML = v;
+    });
+    $$('[data-i18n-ph]').forEach(function(el){
+      var v = t(el.getAttribute('data-i18n-ph'));
+      if (v) el.placeholder = v;
+    });
+    $$('.lang button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+    try { localStorage.setItem('ol_lang', lang); } catch (e) {}
+  }
+
+  $$('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+  });
+
+  var stored = null;
+  try { stored = localStorage.getItem('ol_lang'); } catch (e) {}
+  if (!stored && (navigator.language || '').toLowerCase().indexOf('pt') === 0) stored = 'pt';
+  setLang(stored || 'en');
+
+  /* ---- contact links ---- */
+  function waLink(text){
+    return 'https://wa.me/' + CONTACT.whatsapp + (text ? '?text=' + encodeURIComponent(text) : '');
+  }
+  $$('[data-whatsapp]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      window.open(waLink(t('wa.hello')), '_blank', 'noopener');
+    });
+  });
+  $$('[data-phone-link]').forEach(function(a){
+    a.href = 'tel:+' + CONTACT.whatsapp;
+    a.textContent = CONTACT.phoneDisplay;
+  });
+  $$('[data-email-link]').forEach(function(a){
+    a.href = 'mailto:' + CONTACT.email;
+    a.textContent = CONTACT.email;
+  });
+
+  /* ---- header / menu ---- */
+  var header = $('header'), menu = $('#menu'), burger = $('#burger');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  $$('#menu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---- hero LED wall ---- */
+  var grid = $('#wallGrid');
+  if (grid){
+    var colors = ['#00e0ff','#ff3ea5','#8b5cf6','#00ffb7','#ffb03e','#3e8bff'];
+    for (var i = 0; i < 36; i++){
+      var c = document.createElement('div');
+      c.className = 'cell';
+      if (Math.random() > 0.45){
+        var col = colors[Math.floor(Math.random() * colors.length)];
+        c.style.background = col;
+        c.style.boxShadow = '0 0 18px -2px ' + col;
+      }
+      c.style.animationDelay = (Math.random() * 5).toFixed(2) + 's';
+      grid.appendChild(c);
+    }
+  }
+
+  /* ---- reveal on scroll ---- */
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin:'0px 0px -8% 0px', threshold:0.08 });
+    $$('.rv').forEach(function(el){ io.observe(el); });
+  } else {
+    $$('.rv').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---- quote form ---- */
+  var form = $('#quoteForm');
+  function labelOf(sel){
+    var o = sel.options[sel.selectedIndex];
+    return o ? o.textContent.trim() : '';
+  }
+  function validate(){
+    var ok = true;
+    [['#name', function(v){ return v.length > 1; }],
+     ['#phone', function(v){ return v.replace(/\D/g,'').length >= 7; }],
+     ['#city', function(v){ return v.length > 1; }],
+     ['#email', function(v){ return v === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }]
+    ].forEach(function(pair){
+      var el = $(pair[0]);
+      var good = pair[1](el.value.trim());
+      el.closest('.field').classList.toggle('invalid', !good);
+      if (!good && ok){ el.focus(); ok = false; }
+    });
+    return ok;
+  }
+  function summary(){
+    var lines = [
+      t('wa.hello'), '',
+      t('wa.name') + ': ' + $('#name').value.trim(),
+      t('wa.phone') + ': ' + $('#phone').value.trim()
+    ];
+    if ($('#email').value.trim()) lines.push(t('wa.email') + ': ' + $('#email').value.trim());
+    lines.push(t('wa.city') + ': ' + $('#city').value.trim());
+    lines.push(t('wa.ptype') + ': ' + labelOf($('#ptype')));
+    lines.push(t('wa.scope') + ': ' + labelOf($('#scope')));
+    if ($('#msg').value.trim()) lines.push(t('wa.msg') + ': ' + $('#msg').value.trim());
+    return lines.join('\n');
+  }
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if (!validate()) return;
+    window.open(waLink(summary()), '_blank', 'noopener');
+  });
+  $('#sendEmail').addEventListener('click', function(){
+    if (!validate()) return;
+    window.location.href = 'mailto:' + CONTACT.email +
+      '?subject=' + encodeURIComponent(t('mail.subject')) +
+      '&body=' + encodeURIComponent(summary());
+  });
+  $$('#quoteForm input, #quoteForm select').forEach(function(el){
+    el.addEventListener('input', function(){ el.closest('.field').classList.remove('invalid'); });
+  });
+
+  $('#year').textContent = '© ' + new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
