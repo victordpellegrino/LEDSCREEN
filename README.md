@@ -17,7 +17,7 @@ CLAUDE.md       convenções para quem for mexer no código
 
 ## O que a página tem
 
-- **Hero** com a proposta, dois CTAs (orçamento e WhatsApp) e selos.
+- **Hero** com a proposta, dois CTAs (orçamento e ligação) e selos.
 - **Onde instalamos**: casas e home theater, lanai/piscina, casas de temporada e
   salas de jogos, comércio e letreiros.
 - **Fixação** — a seção que explica os 8 tipos de suporte: fixo, inclinável,
