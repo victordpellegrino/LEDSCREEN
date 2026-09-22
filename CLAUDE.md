@@ -15,9 +15,12 @@ Fonts).
   correspondente em `I18N.pt`. Texto criado por JS (as legendas da galeria, por
   exemplo) precisa da chave nos dois dicionários — `EN_EXTRA` e `I18N.pt`.
 - **Configuração num lugar só**: o objeto `SETTINGS` no topo do `<script>`
-  (marca, e-mail, WhatsApp, endpoint do formulário). Nada de telefone, e-mail ou
+  (marca, WhatsApp, e-mail, endpoint do formulário). Nada de telefone, e-mail ou
   nome da marca escrito direto na marcação — use `data-brand`, `data-phone-link`,
   `data-email-link`, `data-whatsapp`.
+- **Nenhum e-mail pessoal no site.** `SETTINGS.email` fica vazio até existir
+  e-mail do domínio; com ele vazio, o pedido sai pelo WhatsApp e o botão de
+  e-mail some. Não reintroduzir endereço pessoal na marcação.
 - **Não inventar número de negócio.** Preço, prazo, garantia, quantidade de
   obras, tempo de mercado: se não veio do Victor, deixar `TODO(Victor)` e um
   texto neutro. Nada de depoimento sem cliente real.

@@ -52,12 +52,17 @@ preenchido) e um campo-armadilha invisível contra robôs de spam.
 
 ### Para onde o pedido vai
 
-Hoje o botão **"Enviar meu pedido"** abre o aplicativo de e-mail do visitante
-com tudo preenchido, endereçado para `victor.d.pellegrino@gmail.com`. O botão
-verde manda o mesmo resumo pelo WhatsApp.
+O botão **"Enviar pelo WhatsApp"** monta o resumo do pedido e abre o WhatsApp
+em **+1 (863) 869-1567**, já com a mensagem escrita — o visitante só confirma.
+Abaixo dele há o botão de ligar, que disca o mesmo número.
 
-Para o pedido **cair direto na caixa de entrada**, sem depender do visitante
-apertar enviar, basta um serviço de formulário (Web3Forms, Formspree, Getform e
+Não há e-mail publicado no site de propósito: endereço pessoal em landing page
+pega spam e passa impressão de amador. Quando existir e-mail do domínio, basta
+preencher `SETTINGS.email` — o botão de e-mail volta sozinho e passa a ser o
+caminho principal.
+
+Para o pedido **cair numa caixa de entrada** sem depender do visitante apertar
+enviar, basta um serviço de formulário (Web3Forms, Formspree, Getform e
 similares: você cadastra o e-mail, eles devolvem um endpoint). Depois é só
 preencher no `SETTINGS` dentro do `<script>`:
 
@@ -67,7 +72,7 @@ formAccessKey: 'sua-chave'
 ```
 
 Com o endpoint preenchido, o site envia por `fetch`, mostra a confirmação na
-própria página e cai de volta no e-mail automaticamente se a chamada falhar.
+própria página e cai de volta no WhatsApp se a chamada falhar.
 
 ## Fotos
 
@@ -84,18 +89,17 @@ lugar e nada quebra.
 
 Tudo que depende de um dado real está marcado com `TODO(Victor)` no código:
 
-1. **Telefone / WhatsApp** — `SETTINGS.whatsapp` (só dígitos, com código do
-   país, ex.: `14075551234`) e `SETTINGS.phoneDisplay`. É o único dado que falta
-   para a página funcionar de ponta a ponta.
-2. **Nome** — está como `Orlando LED Screens`, nome de trabalho descritivo que
+1. **Nome** — está como `Orlando LED Screens`, nome de trabalho descritivo que
    funciona bem em busca e não afirma que existe empresa registrada. Trocar em
    `SETTINGS.brand` (e no `<title>`, nas metatags e no JSON-LD) quando houver.
-3. **Domínio** — substituir `https://TODO-dominio.com/` no canonical, nas tags
+2. **Domínio** — substituir `https://TODO-dominio.com/` no canonical, nas tags
    Open Graph, no JSON-LD e no `robots.txt`, e gerar a imagem `og.png`.
+3. **E-mail do domínio** — quando existir, preencher `SETTINGS.email`.
 4. **Fotos de obra** — as atuais são de referência. Assim que houver projeto
    entregue, trocar pelas fotos reais (mesmos nomes) e ajustar a legenda.
-5. **E-mail** — hoje o pessoal. Vale trocar por um e-mail do domínio quando ele
-   existir: aparece melhor e evita spam no pessoal.
+
+Telefone e WhatsApp já estão configurados: **+1 (863) 869-1567**, em
+`SETTINGS.whatsapp` e `SETTINGS.phoneDisplay`.
 
 Enquanto não há empresa aberta, a página **não** afirma nada que dependa disso:
 sem licença, sem seguro, sem tempo de mercado, sem depoimento inventado, sem
