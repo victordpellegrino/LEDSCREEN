@@ -4,6 +4,10 @@ Landing page para venda e instalação de **telas de LED e video walls**, intern
 e externos, na região de Orlando / Flórida Central. Público: casas, casas de
 temporada (vacation rentals) e comércio.
 
+**No ar:** https://ledscreen-two.vercel.app
+(projeto `ledscreen` na Vercel, time ArtudTech, deploy automático a cada push
+na `main`.)
+
 Site de **arquivo único**: `index.html` com HTML + CSS + JS puro, sem build e sem
 framework. Abrir o arquivo no navegador já é o site rodando.
 
@@ -118,10 +122,13 @@ região trabalham. Quando abrir a empresa e tiver licença, colocar isso no hero
 
 ## Deploy
 
-Projeto estático. Na Vercel, importar o repositório sem framework preset:
+Projeto estático, já publicado na Vercel: projeto `ledscreen` (time ArtudTech),
+ligado a este repositório. Todo push na `main` publica sozinho — sem build,
+sem framework preset.
 
-- Build command: *(vazio)*
-- Output directory: `.`
+URLs: `ledscreen-two.vercel.app` e `ledscreen-artud-tech.vercel.app`.
+Domínio próprio: adicionar em Project → Settings → Domains e atualizar o
+canonical, as tags Open Graph, o JSON-LD e o `robots.txt`.
 
 O `vercel.json` traz os headers de segurança e o cache do HTML.
 
