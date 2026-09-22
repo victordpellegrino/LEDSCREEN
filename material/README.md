@@ -1,35 +1,45 @@
 # Material comercial
 
-Flyer de duas páginas para mandar por WhatsApp, e-mail ou imprimir.
+| Arquivo | Formato | Para quem |
+|---|---|---|
+| `orlando-led-screens-en.pdf` | Flyer 2 páginas, Letter | Clientes e parceiros americanos |
+| `orlando-led-screens-pt.pdf` | Flyer 2 páginas, Letter | Rede brasileira em Orlando |
+| `whatsapp-led-en.png` | 1080 × 1920 | Status do WhatsApp e envio no chat |
+| `whatsapp-led-pt.png` | 1080 × 1920 | Status do WhatsApp e envio no chat |
 
-| Arquivo | Para quem |
-|---|---|
-| `orlando-led-screens-en.pdf` | Clientes e parceiros americanos |
-| `orlando-led-screens-pt.pdf` | Sua rede brasileira em Orlando |
+**Flyer, página 1:** foto grande, onde instalamos, três fotos de referência e o
+que o orçamento cobre. **Página 2:** os oito tipos de fixação, comparativo
+indoor × outdoor e o passo a passo. As duas páginas terminam com telefone, site
+e QR code.
 
-**Página 1:** foto grande, onde instalamos, três fotos de referência e o que o
-orçamento cobre. **Página 2:** os oito tipos de fixação, comparativo
-indoor × outdoor com a regra do pitch × 10, e o passo a passo do projeto.
-As duas páginas terminam com telefone, site e QR code para o site.
+**Card do WhatsApp:** foto da área de piscina, manchete, quatro pontos de
+venda, telefone, site e QR. 9:16, que é o formato do status e também aparece
+grande no chat.
 
 ## Como gerar de novo
 
-Editar os textos em `build.py` (dicionário `T`, uma entrada por idioma) e:
-
 ```bash
 python3 -m http.server 8931          # a partir da raiz do repositório
-python3 material/build.py            # gera flyer-en.html e flyer-pt.html
+python3 material/build.py            # flyer: gera flyer-en.html e flyer-pt.html
+python3 material/social.py           # card: gera social-en.html e social-pt.html
+
 chrome --headless=new --no-pdf-header-footer \
   --print-to-pdf=material/orlando-led-screens-en.pdf \
   http://localhost:8931/material/flyer-en.html
+
+chrome --headless=new --hide-scrollbars --window-size=1080,1920 \
+  --screenshot=material/whatsapp-led-en.png \
+  http://localhost:8931/material/social-en.html
 ```
 
-O QR (`qr.svg`) aponta para o site; refazer com `qrcode` se o domínio mudar.
+Textos ficam nos dicionários `T` de cada script, um bloco por idioma. O QR
+(`qr.svg`) aponta para o site; refazer com a biblioteca `qrcode` se o domínio
+mudar.
 
-Regras do layout: cada `.page` tem 8,5 × 11 in e `overflow:hidden` — se o
-conteúdo passar disso, ele é cortado em silêncio. Depois de mexer nos textos,
-meça a altura real com `min-height`/`overflow:visible` e confirme que cada
-página fecha em 1056 px antes de gerar o PDF.
+Cuidado com altura: cada `.page` do flyer tem 8,5 × 11 in e o card tem 1920 px,
+os dois com `overflow:hidden` — conteúdo que passa disso é cortado em silêncio.
+Depois de editar, meça com `getBoundingClientRect()` e confirme que o rodapé
+fecha em 1056 px (flyer) ou 1920 px (card) antes de exportar.
 
-O tema é escuro, pensado para tela (WhatsApp, e-mail). Para impressão em
-quantidade, vale gerar uma versão de fundo claro.
+O tema é escuro, pensado para tela. Para impressão em quantidade, vale gerar
+uma versão de fundo claro.
