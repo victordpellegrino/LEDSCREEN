@@ -489,37 +489,41 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
       </ul>
     </div>
 
-    <form id="quoteForm" novalidate class="rv">
+    <form id="quoteForm" novalidate class="rv" method="POST" action="https://formsubmit.co/">
+      <input type="hidden" name="_subject" value="NOVO PEDIDO — Orlando LED Screens">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="formmsg" id="formMsg" role="status"></div>
 
       <div class="row2">
         <div class="field">
           <label for="name" data-i18n="f.name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
+          <input id="name" name="Name" type="text" autocomplete="name" required>
           <p class="err" data-i18n="f.err.name">Please tell us your name.</p>
         </div>
         <div class="field">
           <label for="phone" data-i18n="f.phone">Phone (cell)</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          <input id="phone" name="Phone" type="tel" autocomplete="tel" required>
           <p class="err" data-i18n="f.err.phone">Please enter a phone number we can text.</p>
         </div>
       </div>
       <div class="row2">
         <div class="field">
           <label for="email" data-i18n="f.email">Email <span class="hint" data-i18n="f.email.h">Optional</span></label>
-          <input id="email" name="email" type="email" autocomplete="email">
+          <input id="email" name="Email" type="email" autocomplete="email">
           <p class="err" data-i18n="f.err.email">This email address looks incomplete.</p>
         </div>
         <div class="field">
           <label for="city" data-i18n="f.city">City or ZIP</label>
-          <input id="city" name="city" type="text" autocomplete="postal-code" required>
+          <input id="city" name="City_ZIP" type="text" autocomplete="postal-code" required>
           <p class="err" data-i18n="f.err.city">Please enter the city or ZIP code.</p>
         </div>
       </div>
       <div class="row2">
         <div class="field">
           <label for="ptype" data-i18n="f.ptype">Property type</label>
-          <select id="ptype" name="ptype">
+          <select id="ptype" name="Property_type">
             <option value="home" data-i18n="f.ptype.1">Home I live in</option>
             <option value="rental" data-i18n="f.ptype.2">Vacation rental / Airbnb</option>
             <option value="business" data-i18n="f.ptype.3">Store, office or showroom</option>
@@ -530,7 +534,7 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
         </div>
         <div class="field">
           <label for="env" data-i18n="f.env">Indoor or outdoor</label>
-          <select id="env" name="env">
+          <select id="env" name="Indoor_outdoor">
             <option value="indoor" data-i18n="f.env.1">Indoor</option>
             <option value="covered" data-i18n="f.env.2">Covered outdoor (lanai, patio, garage)</option>
             <option value="outdoor" data-i18n="f.env.3">Fully outdoor (sun and rain)</option>
@@ -541,7 +545,7 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
       <div class="row2">
         <div class="field">
           <label for="mount" data-i18n="f.mount">Mount type <span class="hint" data-i18n="f.mount.h">We confirm it on the visit</span></label>
-          <select id="mount" name="mount">
+          <select id="mount" name="Mount_type">
             <option value="unsure" data-i18n="f.mount.9">Not sure — recommend one</option>
             <option value="fixed" data-i18n="f.mount.1">Fixed / flush to the wall</option>
             <option value="tilt" data-i18n="f.mount.2">Tilt (mounted high)</option>
@@ -555,18 +559,17 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
         </div>
         <div class="field">
           <label for="dims" data-i18n="f.dims">Wall area <span class="hint" data-i18n="f.dims.h">Width × height in feet, if you know it</span></label>
-          <input id="dims" name="dims" type="text" placeholder="" data-i18n-ph="f.dims.ph">
+          <input id="dims" name="Wall_area" type="text" placeholder="" data-i18n-ph="f.dims.ph">
         </div>
       </div>
       <div class="field">
         <label for="msg" data-i18n="f.msg">Anything else? <span class="hint" data-i18n="f.msg.h">Photos of the wall help a lot — text them to us after this</span></label>
-        <textarea id="msg" name="msg" placeholder="" data-i18n-ph="f.msg.ph"></textarea>
+        <textarea id="msg" name="Notes" placeholder="" data-i18n-ph="f.msg.ph"></textarea>
       </div>
-      <input type="text" class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <button class="btn btn-primary btn-lg btn-block" type="submit">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.9-.9L3 20.5l1.6-4.9A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/></svg>
-        <span data-i18n="f.submit">Send my request by text</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2.5 11 13"/><path d="M21.5 2.5 15 21.5 11 13 2.5 9z"/></svg>
+        <span data-i18n="f.submit">Send my request</span>
       </button>
       <div class="alt">
         <a class="btn btn-ghost btn-block" id="callBtn" href="#">
@@ -629,22 +632,23 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
     brand: 'Orlando LED Screens',
     phone: '18638691567',
     phoneDisplay: '+1 (863) 869-1567',
-    /* e-mail de contato: deixar vazio esconde o botão de e-mail e manda tudo
-       por SMS. Preencher quando existir e-mail do domínio. */
+    /* e-mail de CONTATO mostrado na página: só preencher quando existir
+       e-mail do domínio. Vazio = nenhum endereço aparece no site. */
     email: '',
-    formEndpoint: '',
-    formAccessKey: ''
+    /* Para onde o formulário é enviado (FormSubmit.co, mesmo serviço do site
+       da Bravo). Pode ser o e-mail ou o alias do FormSubmit.
+       TODO(Victor): trocar pelo alias (formsubmit.co/el/xxxx, que vem no
+       e-mail de ativação) para o endereço sumir também do código-fonte. */
+    formTarget: 'victor.d.pellegrino@gmail.com'
   };
 
+  function formAction(){ return 'https://formsubmit.co/' + SETTINGS.formTarget; }
+  function formAjax(){ return 'https://formsubmit.co/ajax/' + SETTINGS.formTarget; }
+
   var EN_EXTRA = {
-    'sum.title':'LED screen quote request',
-    'sum.name':'Name','sum.phone':'Phone','sum.email':'Email','sum.city':'City/ZIP',
-    'sum.ptype':'Property','sum.env':'Environment','sum.mount':'Mount',
-    'sum.dims':'Wall area','sum.msg':'Notes','sum.none':'—',
+    'sum.title':'LED screen quote request','sum.none':'—',
     'msg.sent':'Request sent. We will get back to you shortly.',
-    'msg.fail':'Could not send it from here. Opening an email with everything filled in instead.',
-    'msg.mail':'Your email app is opening with the request filled in — just press send.',
-    'msg.sms':'Opening your messages app with the request filled in — just press send. If it does not open, text or call +1 (863) 869-1567.',
+    'msg.sending':'Sending…',
     'gal.1':'Living room &amp; home theater','gal.4':'Lobby video wall',
     'gal.5':'Storefront &amp; menu board','gal.6':'Video wall mounting structure'
   };
@@ -734,18 +738,12 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
     'f.err.email':'Esse e-mail parece incompleto.','f.err.city':'Informe a cidade ou o ZIP code.',
     'f.msg':'Mais alguma coisa?','f.msg.h':'Fotos da parede ajudam muito — mande por mensagem depois',
     'f.msg.ph':'Medidas, o que já existe no local, prazo, o que você tem em mente...',
-    'f.submit':'Enviar por mensagem','f.submit2':'Ou ligar agora',
+    'f.submit':'Enviar meu pedido','f.submit2':'Ou ligar agora',
     'f.note':'Nada é enviado até você confirmar a mensagem. Sem spam e sem repassar seus dados.',
     'ft.tag':'Telas de LED e video walls, internos e externos, fornecidos e instalados na Flórida Central.',
     'ft.rights':'Todos os direitos reservados.',
-        'sum.title':'Pedido de orçamento — tela de LED',
-    'sum.ptype':'Imóvel','sum.env':'Ambiente',
-    'sum.dims':'Área de parede','sum.mount':'Fixação',
-    'sum.name':'Nome','sum.phone':'Telefone','sum.email':'E-mail','sum.city':'Cidade/ZIP',
-    'sum.msg':'Observações','sum.none':'—',
-    'msg.sent':'Pedido enviado. Retornamos em seguida.','msg.sms':'Abrindo o app de mensagens com o pedido preenchido — é só enviar. Se não abrir, ligue ou mande SMS para +1 (863) 869-1567.',
-    'msg.fail':'Não deu para enviar daqui. Abrindo um e-mail com tudo preenchido.',
-    'msg.mail':'Seu aplicativo de e-mail está abrindo com o pedido preenchido — é só enviar.'
+        'sum.title':'Pedido de orçamento — tela de LED','sum.none':'—',
+    'msg.sending':'Enviando…','msg.sent':'Pedido enviado. Retornamos em seguida.',
   }};
 
   var $ = function(s, r){ return (r || document).querySelector(s); };
@@ -782,12 +780,6 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
 
   /* brand + contacts */
   $$('[data-brand]').forEach(function(el){ el.textContent = SETTINGS.brand; });
-  /* sms: com "?&body=" é o formato que funciona no iPhone e na maior parte
-     do Android; no desktop o app de mensagens pode não abrir, por isso a
-     página sempre mostra o número escrito. */
-  function smsLink(text){
-    return 'sms:+' + SETTINGS.phone + (text ? '?&body=' + encodeURIComponent(text) : '');
-  }
   $$('[data-phone-link]').forEach(function(a){
     a.href = 'tel:+' + SETTINGS.phone;
     var label = a.querySelector('[data-i18n]');
@@ -880,10 +872,6 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
 
   /* ---------- formulário ---------- */
   var form = $('#quoteForm'), formMsg = $('#formMsg');
-  function labelOf(id){
-    var sel = $(id), o = sel.options[sel.selectedIndex];
-    return o ? o.textContent.trim() : '';
-  }
   function validate(){
     var ok = true;
     [['#name', function(v){ return v.length > 1; }],
@@ -898,66 +886,62 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
     });
     return ok;
   }
-  function fields(){
-    return [
-      [t('sum.name'), $('#name').value.trim()],
-      [t('sum.phone'), $('#phone').value.trim()],
-      [t('sum.email'), $('#email').value.trim()],
-      [t('sum.city'), $('#city').value.trim()],
-      [t('sum.ptype'), labelOf('#ptype')],
-      [t('sum.env'), labelOf('#env')],
-      [t('sum.mount'), labelOf('#mount')],
-      [t('sum.dims'), $('#dims').value.trim()],
-      [t('sum.msg'), $('#msg').value.trim()]
-    ];
-  }
-  function summary(){
-    var lines = [t('sum.title'), ''];
-    fields().forEach(function(f){ if (f[1]) lines.push(f[0] + ': ' + f[1]); });
-    return lines.join('\n');
-  }
   function say(kind, key){
     formMsg.className = 'formmsg ' + kind;
     formMsg.textContent = t(key);
   }
-  function openMail(){
-    say('ok', 'msg.mail');
-    window.location.href = 'mailto:' + SETTINGS.email +
-      '?subject=' + encodeURIComponent(t('sum.title') + ' \u2014 ' + $('#name').value.trim()) +
-      '&body=' + encodeURIComponent(summary());
-  }
-  function openSms(){
-    say('ok', 'msg.sms');
-    window.location.href = smsLink(summary());
-  }
-  /* sem endpoint configurado, o pedido vai por SMS; se houver e-mail em
-     SETTINGS.email, o e-mail tem preferência. */
-  function fallback(){ if (SETTINGS.email) openMail(); else openSms(); }
 
+  /* payload em inglês, sempre: o pedido chega igual no e-mail, mesmo quando
+     o visitante está navegando em português. */
+  var MAIL_LABELS = {
+    Name:'Name', Phone:'Phone', Email:'Email', City_ZIP:'City / ZIP',
+    Property_type:'Property type', Indoor_outdoor:'Indoor / outdoor',
+    Mount_type:'Mount type', Wall_area:'Wall area', Notes:'Notes'
+  };
+  function mailPayload(){
+    var data = {};
+    new FormData(form).forEach(function(v, k){
+      if (k === '_honey') return;
+      if (k.charAt(0) === '_'){ data[k] = v; return; }
+      var el = form.querySelector('[name="' + k + '"]');
+      if (el && el.tagName === 'SELECT'){
+        var opt = el.options[el.selectedIndex];
+        /* I18N.en guarda o texto original da marcação, então o e-mail chega
+           sempre em inglês, mesmo com a página em português. */
+        v = I18N.en[opt.getAttribute('data-i18n')] || opt.textContent.trim();
+      }
+      data[MAIL_LABELS[k] || k] = (String(v).trim() || t('sum.none'));
+    });
+    data._subject = 'NOVO PEDIDO \u2014 ' + SETTINGS.brand + ': ' + $('#name').value.trim() +
+                    ' (' + $('#city').value.trim() + ')';
+    if ($('#email').value.trim()) data._replyto = $('#email').value.trim();
+    return data;
+  }
+
+  form.action = formAction();
   form.addEventListener('submit', function(ev){
     ev.preventDefault();
-    if ($('input[name="company"]').value) return;       /* honeypot */
+    if (form.querySelector('[name="_honey"]').value) return;   /* honeypot */
     if (!validate()) return;
-    if (!SETTINGS.formEndpoint){ fallback(); return; }
-
-    var payload = { subject: t('sum.title') + ' \u2014 ' + $('#name').value.trim(), from_name: SETTINGS.brand };
-    if (SETTINGS.formAccessKey) payload.access_key = SETTINGS.formAccessKey;
-    fields().forEach(function(f){ payload[f[0]] = f[1] || t('sum.none'); });
 
     var btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
-    fetch(SETTINGS.formEndpoint, {
+    say('ok', 'msg.sending');
+    fetch(formAjax(), {
       method:'POST',
       headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(mailPayload())
     }).then(function(r){
       if (!r.ok) throw new Error('http ' + r.status);
+      return r.json();
+    }).then(function(){
       say('ok', 'msg.sent');
       form.reset();
+      btn.disabled = false;
     }).catch(function(){
-      say('bad', 'msg.fail');
-      fallback();
-    }).then(function(){ btn.disabled = false; });
+      /* envio normal do navegador como rede de segurança (igual ao site da Bravo) */
+      form.submit();
+    });
   });
   $('#callBtn').href = 'tel:+' + SETTINGS.phone;
   $$('#quoteForm input, #quoteForm select').forEach(function(el){

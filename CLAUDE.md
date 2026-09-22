@@ -21,8 +21,12 @@ Fonts).
 - **Nenhum e-mail pessoal no site.** `SETTINGS.email` fica vazio até existir
   e-mail do domínio; com ele vazio, o pedido sai por SMS e o botão de e-mail
   some. Não reintroduzir endereço pessoal na marcação.
-- **Sem WhatsApp.** O público é americano: contato é ligação (`tel:`) e SMS
-  (`sms:`). Não reintroduzir wa.me nem botão flutuante de WhatsApp.
+- **Sem WhatsApp.** O público é americano: contato é ligação (`tel:`) e o
+  formulário. Não reintroduzir wa.me nem botão flutuante de WhatsApp.
+- **Formulário**: vai para o FormSubmit (`SETTINGS.formTarget`), por `fetch`
+  no endpoint `/ajax/`, com o POST nativo do formulário como fallback. Os
+  valores dos `<select>` são enviados em inglês (via `I18N.en`), não no idioma
+  da página.
 - **Não inventar número de negócio.** Preço, prazo, garantia, quantidade de
   obras, tempo de mercado: se não veio do Victor, deixar `TODO(Victor)` e um
   texto neutro. Nada de depoimento sem cliente real.

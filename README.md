@@ -53,33 +53,34 @@ preenchido) e um campo-armadilha invisível contra robôs de spam.
 
 ### Para onde o pedido vai
 
-O botão **"Enviar por mensagem"** monta o resumo do pedido e abre o app de
-mensagens do visitante já com o texto escrito, endereçado a
-**+1 (863) 869-1567** — ele só aperta enviar. Abaixo há o botão de ligar, que
-disca o mesmo número. Sem WhatsApp: nos Estados Unidos o padrão é ligação e
-SMS.
+O formulário é enviado **pelo próprio site** e chega no e-mail, pelo
+**FormSubmit.co** — o mesmo serviço do site da Bravo. O visitante aperta
+"Enviar meu pedido", vê a confirmação na própria página e o pedido cai na
+caixa de entrada com os campos numa tabela.
 
-O link `sms:` funciona no iPhone e na maior parte do Android; no desktop o app
-de mensagens pode não abrir, e por isso o número aparece escrito na página e a
-mensagem de confirmação repete ele.
+- Destino: `SETTINGS.formTarget`.
+- Envio por `fetch` no endpoint `/ajax/`; se o `fetch` falhar (rede, bloqueio
+  de script), o navegador faz o POST normal do formulário como rede de
+  segurança — a mesma trava do site da Bravo.
+- Assunto do e-mail já vem pronto: `NOVO PEDIDO — Orlando LED Screens: <nome>
+  (<cidade>)`. O e-mail do cliente entra como `_replyto`, então é só responder.
+- Os valores vão **sempre em inglês** no e-mail, mesmo quando o visitante
+  navega o site em português.
+- Campo-armadilha `_honey` contra robôs e `_captcha=false` para não travar o
+  cliente com desafio.
 
-Não há e-mail publicado no site de propósito: endereço pessoal em landing page
-pega spam e passa impressão de amador. Quando existir e-mail do domínio, basta
-preencher `SETTINGS.email` — o caminho de e-mail volta sozinho e passa a ser o
-principal.
+Duas coisas a fazer no FormSubmit:
 
-Para o pedido **cair numa caixa de entrada** sem depender do visitante apertar
-enviar, basta um serviço de formulário (Web3Forms, Formspree, Getform e
-similares: você cadastra o e-mail, eles devolvem um endpoint). Depois é só
-preencher no `SETTINGS` dentro do `<script>`:
+1. **Primeiro envio** dispara um e-mail de ativação do FormSubmit — clicar no
+   link uma vez e pronto (o endereço já foi ativado no site da Bravo, mas a
+   confirmação pode vir de novo para este domínio).
+2. **Esconder o e-mail do código**: o e-mail de ativação traz um alias
+   (`formsubmit.co/el/xxxxx`). Colar esse alias em `SETTINGS.formTarget` no
+   lugar do endereço — o site passa a funcionar sem o Gmail aparecer nem no
+   código-fonte.
 
-```js
-formEndpoint: 'https://api.web3forms.com/submit',
-formAccessKey: 'sua-chave'
-```
-
-Com o endpoint preenchido, o site envia por `fetch`, mostra a confirmação na
-própria página e cai de volta no SMS se a chamada falhar.
+O botão "Ou ligar agora" disca **+1 (863) 869-1567**. Não há WhatsApp: nos
+Estados Unidos o padrão é ligação e SMS.
 
 ## Fotos
 
