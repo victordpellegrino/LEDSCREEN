@@ -34,19 +34,18 @@ CLAUDE.md       convenções para quem for mexer no código
 
 ## O formulário
 
-Quatro blocos, pensados para o orçamento sair quase pronto da primeira mensagem:
+Curto de propósito — formulário longo espanta cliente. Nove campos, todos numa
+tela:
 
-1. **O ambiente** — tipo de imóvel, interno/externo coberto/externo aberto, e o
-   que vai passar na tela.
-2. **Tamanho e fixação** — faixa de tamanho, área de parede em pés, tipo de
-   fixação (fixo, inclinável, articulado, embutido, pedestal, carrinho móvel,
-   teto, estrutura), superfície da parede (drywall, madeira, bloco, stucco,
-   tijolo, vidro) e distância de quem está mais perto — que é o que define o
-   pixel pitch.
-3. **Escopo** — o que o cliente precisa (fornecer a tela, instalar, suporte,
-   tomada nova, esconder cabos, som, conserto, só orientação), prazo e faixa de
-   orçamento.
-4. **Contato** — nome, telefone, e-mail, cidade/ZIP, meio preferido e observações.
+- **Nome\***, **telefone/WhatsApp\***, e-mail (opcional), **cidade ou ZIP\***
+- Tipo de imóvel e **interno / externo coberto / externo aberto**
+- **Tipo de fixação** (fixo, inclinável, articulado, embutido, pedestal,
+  carrinho móvel, teto, estrutura — com "não sei, me recomende" como padrão)
+- Área aproximada da parede em pés (opcional)
+- Campo livre de observações
+
+Pitch, tamanho exato, superfície da parede, cabeamento e escopo ficam para a
+visita — o texto ao lado do formulário diz isso ao cliente.
 
 Validação no cliente (nome, telefone e cidade obrigatórios; e-mail validado se
 preenchido) e um campo-armadilha invisível contra robôs de spam.
@@ -72,10 +71,14 @@ própria página e cai de volta no e-mail automaticamente se a chamada falhar.
 
 ## Fotos
 
-`img/README.md` lista os nomes exatos dos arquivos. Solte a foto na pasta e ela
-substitui a ilustração sozinha — nenhum código precisa mudar. Até lá a página
-mostra ilustrações em SVG feitas para o projeto (nada de banco de imagem com
-marca d'água).
+Já estão no ar: `hero.jpg` (área de piscina), `living-room.jpg`,
+`video-wall.jpg`, `signage.jpg` e `mount-detail.jpg` — imagens de referência dos
+tipos de instalação, apresentadas como referência, não como obra entregue. Os
+nomes e as medidas estão em `img/README.md`; trocar uma foto é só substituir o
+arquivo de mesmo nome.
+
+Se algum arquivo não existir, a ilustração em SVG correspondente aparece no
+lugar e nada quebra.
 
 ## TODO(Victor) — antes de divulgar
 
@@ -89,7 +92,8 @@ Tudo que depende de um dado real está marcado com `TODO(Victor)` no código:
    `SETTINGS.brand` (e no `<title>`, nas metatags e no JSON-LD) quando houver.
 3. **Domínio** — substituir `https://TODO-dominio.com/` no canonical, nas tags
    Open Graph, no JSON-LD e no `robots.txt`, e gerar a imagem `og.png`.
-4. **Fotos** — ver acima.
+4. **Fotos de obra** — as atuais são de referência. Assim que houver projeto
+   entregue, trocar pelas fotos reais (mesmos nomes) e ajustar a legenda.
 5. **E-mail** — hoje o pessoal. Vale trocar por um e-mail do domínio quando ele
    existir: aparece melhor e evita spam no pessoal.
 
