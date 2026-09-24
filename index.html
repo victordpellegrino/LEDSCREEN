@@ -190,6 +190,7 @@ legend{font-family:Sora,sans-serif; font-size:.78rem; letter-spacing:.14em; text
 .hp{position:absolute; left:-9999px}
 .form-note{color:var(--muted-2); font-size:.8rem; margin-top:12px; text-align:center}
 .alt{display:grid; grid-template-columns:1fr; gap:10px; margin-top:12px}
+.foot small.privacy{display:block; margin-top:8px; color:var(--muted-2); max-width:52ch}
 .formmsg{display:none; border-radius:12px; padding:14px 16px; font-size:.92rem; margin-bottom:18px}
 .formmsg.ok{display:block; background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.35)}
 .formmsg.bad{display:block; background:rgba(255,125,154,.1); border:1px solid rgba(255,125,154,.35)}
@@ -598,6 +599,7 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
           <a href="#quote" data-i18n="nav.cta">Free quote</a>
         </div>
         <small><span id="year"></span> <span data-brand>Orlando LED Screens</span>. <span data-i18n="ft.rights">All rights reserved.</span></small>
+        <small class="privacy" data-i18n="ft.privacy">This site uses the Meta Pixel to measure our ads. The details you send in the quote form are used only to answer your request.</small>
       </div>
     </div>
   </div>
@@ -639,8 +641,28 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
        da Bravo). Pode ser o e-mail ou o alias do FormSubmit.
        TODO(Victor): trocar pelo alias (formsubmit.co/el/xxxx, que vem no
        e-mail de ativação) para o endereço sumir também do código-fonte. */
-    formTarget: 'victor.d.pellegrino@gmail.com'
+    formTarget: 'victor.d.pellegrino@gmail.com',
+    /* Pixel da Meta (conjunto de dados "Orlando LED Screens Pixel", portfólio
+       Orlando LED Screens). Vazio = nenhum rastreamento carregado. */
+    metaPixelId: '1069777152503356'
   };
+
+  /* Meta Pixel: PageView ao abrir, Lead quando o pedido de orçamento sai,
+     Contact quando clicam no telefone. */
+  if (SETTINGS.metaPixelId && !window.fbq){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', SETTINGS.metaPixelId);
+    fbq('track', 'PageView');
+  }
+  function track(ev, params){ try { if (window.fbq) fbq('track', ev, params || {}); } catch(e){} }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (a) track('Contact', { method: 'phone' });
+  });
 
   function formAction(){ return 'https://formsubmit.co/' + SETTINGS.formTarget; }
   function formAjax(){ return 'https://formsubmit.co/ajax/' + SETTINGS.formTarget; }
@@ -741,6 +763,7 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
     'f.submit':'Enviar meu pedido','f.submit2':'Ou ligar agora',
     'f.note':'Nada é enviado até você confirmar a mensagem. Sem spam e sem repassar seus dados.',
     'ft.tag':'Telas de LED e video walls, internos e externos, fornecidos e instalados na Flórida Central.',
+    'ft.privacy':'Este site usa o Pixel da Meta para medir nossos anúncios. Os dados que você envia no formulário de orçamento são usados só para responder o seu pedido.',
     'ft.rights':'Todos os direitos reservados.',
         'sum.title':'Pedido de orçamento — tela de LED','sum.none':'—',
     'msg.sending':'Enviando…','msg.sent':'Pedido enviado. Retornamos em seguida.',
@@ -936,11 +959,13 @@ footer{border-top:1px solid var(--line); padding:44px 0 34px; color:var(--muted)
       return r.json();
     }).then(function(){
       say('ok', 'msg.sent');
+      track('Lead', { content_name: 'LED screen quote' });
       form.reset();
       btn.disabled = false;
     }).catch(function(){
       /* envio normal do navegador como rede de segurança (igual ao site da Bravo) */
-      form.submit();
+      track('Lead', { content_name: 'LED screen quote' });
+      setTimeout(function(){ form.submit(); }, 400);
     });
   });
   $('#callBtn').href = 'tel:+' + SETTINGS.phone;
